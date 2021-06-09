@@ -1,0 +1,221 @@
+/* Root Variable Declaration
+---------------------------------*/
+:root {
+  /* Colors */
+  --main: #ffe7a3;
+  --main-text: #00203fff;
+  --hover: #00203fff;
+  --hover-text: #ffe7a3;
+  --footer: #00203fff;
+  --footer-text: #ffe7a3;
+
+  /* Fonts */
+  --body-font: "Roboto", sans-serif;
+  --header-font: "Cabin", sans-serif;
+  --title-font: "Kalam", cursive;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--main-text);
+  background-color: var(--main);
+}
+
+h1 {
+  font-size: 50px;
+  font-family: var(--title-font);
+  font-style: italic;
+  padding-top: 60px;
+}
+
+h2 {
+  font-size: 25px;
+  font-family: var(--header-font);
+}
+
+h1,
+h2,
+ul {
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+h3,
+h4 {
+  max-width: 70%;
+}
+
+h3 {
+  font-family: var(--header-font);
+  font-size: 22px;
+  margin: 20px auto;
+}
+
+h4 {
+  text-decoration: underline;
+  margin: 20px auto 10px auto;
+}
+
+p {
+  margin: 10px auto;
+  max-width: 70%;
+}
+
+a {
+  color: var(--main-text);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p.first {
+  margin-top: 20px;
+}
+
+p.last {
+  margin-bottom: 40px;
+}
+
+/* Expand/Collapse Button Styling
+---------------------------------*/
+#expand_collapse_button {
+  /* Sticky */
+  position: sticky;
+  top: 20px;
+
+  /* Display */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  height: 50px;
+  width: 90px;
+  margin-top: 4px;
+  margin-right: 20px;
+  border: 2px solid var(--main-text);
+  background-color: var(--main);
+  cursor: pointer;
+  border-radius: 10px;
+
+  /* Font */
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.7rem;
+  color: var(--main-text);
+  text-align: center;
+}
+
+#expand_collapse_button:hover {
+  background-color: var(--main-text);
+  color: var(--main);
+}
+
+#expand_collapse_button:active {
+  background-color: hsla(0, 0%, 0%, 0%);
+  color: var(--main-text);
+}
+
+/* Panel Styling
+---------------------------------*/
+.panel-title {
+  padding: 15px 0px;
+  cursor: pointer;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.panel-title::after {
+  content: "-";
+  float: right;
+}
+
+.panel-title.collapsed::after,
+.panel-title.initial::after {
+  content: "+";
+}
+
+.panel-heading,
+.panel-body {
+  border-block-end: 2px solid var(--main-text);
+}
+
+.panel-heading:hover {
+  background-color: var(--hover);
+  color: var(--hover-text);
+}
+
+.closing h2 {
+  font-family: "Kalam", cursive;
+  font-size: 50px;
+  font-style: italic;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Footer Styling
+---------------------------------*/
+footer {
+  background: var(--footer);
+  color: var(--footer-text);
+}
+
+footer .content-wrap {
+  padding: 60px 0;
+  max-width: 800px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-left: auto 0;
+}
+
+.contact-list a {
+  padding: 15px;
+  display: inline-block;
+  color: var(--footer-text);
+  text-decoration: underline;
+}
+
+.contact-list a:hover {
+  text-decoration: none;
+}
+
+/* Media Queries
+---------------------------------*/
+@media screen and (min-width: 750px) {
+  footer {
+    text-align: center;
+  }
+
+  .contact-list {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  h1 {
+    line-height: 0.9;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    line-height: 1;
+  }
+
+  .contact-list a {
+    padding: 5px;
+  }
+}
